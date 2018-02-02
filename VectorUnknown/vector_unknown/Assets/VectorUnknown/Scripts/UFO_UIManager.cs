@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class UFO_UIManager : MonoBehaviour {
 
 	private GameObject Player;
-	public float Height = 2.5f;
-	public int GridSpacing = 1;
+	private int GridSpacing = 1;
+	private float Height = 2.5f;
 
 	public LineRenderer[] Arrows = new LineRenderer[2];
 	public Text[] ChoiceText = new Text[4];
@@ -30,18 +30,18 @@ public class UFO_UIManager : MonoBehaviour {
 	void Start () {
 
 		Player = GetComponent<UFO_PuzzleManager> ().Player;
-		Height = GetComponent<UFO_UIManager> ().Height;
-		GridSpacing = GetComponent<UFO_UIManager> ().GridSpacing;
+		Height = GetComponent<UFO_PuzzleManager> ().Height;
+		GridSpacing = GetComponent<UFO_PuzzleManager> ().GridSpacing;
 		for (int i = 0; i < SelectedVectors.Length; i++) {
 			SelectedVectors [i] = Vector2.zero;
 			SelectedVectorText[i].text = SelectedVectors [i].x.ToString ("F0") + "\n"
-				                  + SelectedVectors [i].y.ToString ("F0");
+				+ SelectedVectors [i].y.ToString ("F0");
 			SelectedConstants [i] = 1;
 			SelectedConstantText [i].text = SelectedConstants [i].ToString ("F0");
 		}
 		Destination = Vector2.zero;
 		DestinationText.text = Destination.x.ToString ("F0") + "\n"
-							 + Destination.y.ToString ("F0");
+			+ Destination.y.ToString ("F0");
 		Vector3 temp = Height * Vector3.up;
 		ArrowPoints = new Vector3[] { temp, temp };
 		Arrows [0].SetPositions (ArrowPoints);
@@ -64,12 +64,12 @@ public class UFO_UIManager : MonoBehaviour {
 
 		SelectedVectors [Index] = Choices [ButtonMap [n]];
 		SelectedVectorText [Index].text = SelectedVectors [Index].x.ToString ("F0") + "\n"
-			                                  + SelectedVectors [Index].y.ToString ("F0");
+			+ SelectedVectors [Index].y.ToString ("F0");
 		SelectedConstants [Index] = 1;
 		SelectedConstantText [Index].text = SelectedConstants [Index].ToString ("F0");		
 		Destination = SelectedVectors [0] + SelectedVectors [1];
 		DestinationText.text = Destination.x.ToString ("F0") + "\n"
-			                 + Destination.y.ToString ("F0");
+			+ Destination.y.ToString ("F0");
 		SetArrows ();
 		Index = 1 - Index;
 
@@ -105,7 +105,7 @@ public class UFO_UIManager : MonoBehaviour {
 		SelectedConstantText [1].text = SelectedConstants [1].ToString ("F0");
 		Destination = SelectedConstants [0] * SelectedVectors [0] + SelectedConstants [1] * SelectedVectors [1];
 		DestinationText.text = Destination.x.ToString ("F0") + "\n"
-			                 + Destination.y.ToString ("F0");
+			+ Destination.y.ToString ("F0");
 		SetArrows ();
 
 	}
@@ -124,18 +124,18 @@ public class UFO_UIManager : MonoBehaviour {
 	}
 
 	public void ResetUI () {
-		
+
 		Player = GetComponent<UFO_PuzzleManager> ().Player;
 		for (int i = 0; i < SelectedVectors.Length; i++) {
 			SelectedVectors [i] = Vector2.zero;
 			SelectedVectorText[i].text = SelectedVectors [i].x.ToString ("F0") + "\n"
-				                       + SelectedVectors [i].y.ToString ("F0");
+				+ SelectedVectors [i].y.ToString ("F0");
 			SelectedConstants [i] = 1;
 			SelectedConstantText [i].text = SelectedConstants [i].ToString ("F0");
 		}
 		Destination = Vector2.zero;
 		DestinationText.text = Destination.x.ToString ("F0") + "\n"
-			                 + Destination.y.ToString ("F0");
+			+ Destination.y.ToString ("F0");
 		Vector3 temp = Height * Vector3.up;
 		ArrowPoints = new Vector3[] { temp, temp };
 		Arrows [0].SetPositions (ArrowPoints);
@@ -145,7 +145,7 @@ public class UFO_UIManager : MonoBehaviour {
 	}
 
 	private void SetArrows () {
-		
+
 		ArrowPoints [0] = new Vector3 (SelectedVectors [0].x, 0, SelectedVectors [0].y) * SelectedConstants [0] + Height * Vector3.up;
 		ArrowPoints [1] = new Vector3 (SelectedVectors [1].x, 0, SelectedVectors [1].y) * SelectedConstants [1] + ArrowPoints [0];
 		Vector3[] temp = new Vector3[]{ Height * Vector3.up, ArrowPoints [0] };
