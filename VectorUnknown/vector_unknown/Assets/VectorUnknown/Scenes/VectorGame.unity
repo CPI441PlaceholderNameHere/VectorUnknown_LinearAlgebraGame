@@ -835,6 +835,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rows: 20
   columns: 20
+  tileSize: 1
+  offset: 0.5
+  quadrantSize: 10
+  gridHeight: 0.1
   tile: {fileID: 1876216113729280, guid: 3b073bbc504c540088b7d3eb51edc67b, type: 2}
   gridHolder: {fileID: 527101602}
   textInput: {fileID: 4900000, guid: ed0de2033b09f471aa4f3bc267a72a91, type: 3}
@@ -1904,8 +1908,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 25
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

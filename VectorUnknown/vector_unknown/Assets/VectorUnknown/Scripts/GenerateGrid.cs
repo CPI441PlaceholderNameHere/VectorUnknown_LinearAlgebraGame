@@ -6,8 +6,15 @@ using UnityEngine;
 
 public class GenerateGrid : MonoBehaviour {
 
-    public int rows = 5;
-    public int columns = 5;
+    public int rows = 20;
+    public int columns;
+
+    public int tileSize = 1;
+    public float offset = 0.5f;
+
+    public int quadrantSize = 10;
+
+    public float gridHeight = 0.1f;
 
     public char[,] tileMapped;
     public GameObject[,] tileGrid;
@@ -22,9 +29,14 @@ public class GenerateGrid : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        columns = rows;
+        offset = tileSize / 2;
+        quadrantSize = rows / 2;
+
         tileMapped = new char[rows, columns];
         ReadTextLevels();
         InitializeGrid();
+
 
         //mainCamera.transform.position = new Vector3(rows/2,rows,columns/2);
 	}
@@ -38,12 +50,18 @@ public class GenerateGrid : MonoBehaviour {
     {
         gridHolder = new GameObject("grid").transform;
 
-        for (int i = 0; i < rows; i++)
+        offset = (float)tileSize;
+        offset = offset / 2;
+
+        // first quadrant
+        for (int i = quadrantSize; i < rows; i++)
         {
-            for (int j = 0; j < columns; j++)
+            for (int j = quadrantSize; j < columns; j++)
             { 
                 GameObject instance = Instantiate(tile, 
-                    new Vector3(i, 0.1f, j), Quaternion.identity) as GameObject;
+                    new Vector3(i-quadrantSize, gridHeight, j-quadrantSize), Quaternion.identity) as GameObject;
+
+                instance.transform.Translate(new Vector3(offset, 0.0f, offset));
 
                 instance.transform.SetParent(gridHolder);
 
@@ -68,12 +86,16 @@ public class GenerateGrid : MonoBehaviour {
 
             }
         }
-        for (int i = 0; i < rows; i++)
+
+        // second quadrant
+        for (int i = 0; i < quadrantSize; i++)
         {
-            for (int j = 0; j < columns; j++)
+            for (int j = quadrantSize; j < columns; j++)
             {
                 GameObject instance = Instantiate(tile,
-                    new Vector3(-i, 0.1f, j), Quaternion.identity) as GameObject;
+                    new Vector3(i - quadrantSize, gridHeight, j - quadrantSize), Quaternion.identity) as GameObject;
+
+                instance.transform.Translate(new Vector3(offset, 0.0f, offset));
 
                 instance.transform.SetParent(gridHolder);
 
@@ -98,12 +120,16 @@ public class GenerateGrid : MonoBehaviour {
 
             }
         }
-        for (int i = 0; i < rows; i++)
+
+        // third quadrant
+        for (int i = 0; i < quadrantSize; i++)
         {
-            for (int j = 0; j < columns; j++)
+            for (int j = 0; j < quadrantSize; j++)
             {
                 GameObject instance = Instantiate(tile,
-                    new Vector3(i, 0.1f, -j), Quaternion.identity) as GameObject;
+                    new Vector3(i - quadrantSize, gridHeight, j - quadrantSize), Quaternion.identity) as GameObject;
+
+                instance.transform.Translate(new Vector3(offset, 0.0f, offset));
 
                 instance.transform.SetParent(gridHolder);
 
@@ -128,12 +154,16 @@ public class GenerateGrid : MonoBehaviour {
 
             }
         }
-        for (int i = 0; i < rows; i++)
+
+        // fourth quadrant
+        for (int i = quadrantSize; i < rows; i++)
         {
-            for (int j = 0; j < columns; j++)
+            for (int j = 0; j < quadrantSize; j++)
             {
                 GameObject instance = Instantiate(tile,
-                    new Vector3(-i, 0.1f, -j), Quaternion.identity) as GameObject;
+                    new Vector3(i - quadrantSize, gridHeight, j - quadrantSize), Quaternion.identity) as GameObject;
+
+                instance.transform.Translate(new Vector3(offset, 0.0f, offset));
 
                 instance.transform.SetParent(gridHolder);
 
