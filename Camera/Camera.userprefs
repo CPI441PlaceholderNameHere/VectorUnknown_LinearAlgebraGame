@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GE Common Assets\GE Touch Joystick\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs">
+    <Files>
+      <File FileName="Assets\scripts\camera_controls.cs" Line="30" Column="66" />
+      <File FileName="Assets\scripts\top_down_third.cs" Line="13" Column="46" />
+      <File FileName="Assets\scripts\rotate_camera.cs" Line="32" Column="23" />
+      <File FileName="Assets\GE Common Assets\GE Touch Joystick\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

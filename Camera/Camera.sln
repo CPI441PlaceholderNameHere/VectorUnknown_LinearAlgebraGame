@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camera", "Assembly-CSharp.csproj", "{B7608127-711D-B24B-32F1-F203705490F9}"
+EndProject
+Project("{967D35E4-0F3F-95B1-F538-BD248640BF3B}") = "Camera", "Assembly-UnityScript.unityproj", "{1A754857-82AB-7DEF-9E87-AAF7354D1D4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camera", "Assembly-CSharp-Editor.csproj", "{CF94237C-FFAE-F82F-C9F3-E4A43E9C75D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7608127-711D-B24B-32F1-F203705490F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7608127-711D-B24B-32F1-F203705490F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7608127-711D-B24B-32F1-F203705490F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7608127-711D-B24B-32F1-F203705490F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A754857-82AB-7DEF-9E87-AAF7354D1D4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A754857-82AB-7DEF-9E87-AAF7354D1D4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A754857-82AB-7DEF-9E87-AAF7354D1D4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A754857-82AB-7DEF-9E87-AAF7354D1D4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF94237C-FFAE-F82F-C9F3-E4A43E9C75D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF94237C-FFAE-F82F-C9F3-E4A43E9C75D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF94237C-FFAE-F82F-C9F3-E4A43E9C75D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF94237C-FFAE-F82F-C9F3-E4A43E9C75D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
