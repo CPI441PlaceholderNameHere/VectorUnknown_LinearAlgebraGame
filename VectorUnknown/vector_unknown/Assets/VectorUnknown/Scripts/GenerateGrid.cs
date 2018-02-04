@@ -70,19 +70,7 @@ public class GenerateGrid : MonoBehaviour {
 
                 tileData.tileType = type;
 
-                // setting tile colors
-                if (tileData.tileType == '0')
-                {
-                    tileData.baseColor = Color.black;
-                }
-                else if (tileData.tileType == 't')
-                {
-                    tileData.baseColor = Color.gray;
-                }
-                else if (tileData.tileType == 'g')
-                {
-                    tileData.baseColor = Color.green;
-                }
+				choose_color (tileData);
 
             }
         }
@@ -104,20 +92,7 @@ public class GenerateGrid : MonoBehaviour {
 
                 tileData.tileType = type;
 
-                // setting tile colors
-                if (tileData.tileType == '0')
-                {
-                    tileData.baseColor = Color.black;
-                }
-                else if (tileData.tileType == 't')
-                {
-                    tileData.baseColor = Color.gray;
-                }
-                else if (tileData.tileType == 'g')
-                {
-                    tileData.baseColor = Color.green;
-                }
-
+				choose_color (tileData);
             }
         }
 
@@ -138,20 +113,7 @@ public class GenerateGrid : MonoBehaviour {
 
                 tileData.tileType = type;
 
-                // setting tile colors
-                if (tileData.tileType == '0')
-                {
-                    tileData.baseColor = Color.black;
-                }
-                else if (tileData.tileType == 't')
-                {
-                    tileData.baseColor = Color.gray;
-                }
-                else if (tileData.tileType == 'g')
-                {
-                    tileData.baseColor = Color.green;
-                }
-
+				choose_color (tileData);
             }
         }
 
@@ -172,23 +134,27 @@ public class GenerateGrid : MonoBehaviour {
 
                 tileData.tileType = type;
 
-                // setting tile colors
-                if (tileData.tileType == '0')
-                {
-                    tileData.baseColor = Color.black;
-                }
-                else if (tileData.tileType == 't')
-                {
-                    tileData.baseColor = Color.gray;
-                }
-                else if (tileData.tileType == 'g')
-                {
-                    tileData.baseColor = Color.green;
-                }
+				choose_color (tileData);
 
             }
         }
     }
+
+	void choose_color( TileMouseOver tileData){
+		// setting tile colors
+		if (tileData.tileType == '0')
+		{
+			tileData.baseColor = Color.black;
+		}
+		else if (tileData.tileType == 't')
+		{
+			tileData.baseColor = Color.gray;
+		}
+		else if (tileData.tileType == 'g')
+		{
+			tileData.baseColor = Color.green;
+		}
+	}
 
     void ReadTextLevels()
     {
