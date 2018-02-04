@@ -26,7 +26,7 @@ public class GenerateGrid : MonoBehaviour {
         ReadTextLevels();
         InitializeGrid();
 
-        mainCamera.transform.position = new Vector3(rows/2,rows,columns/2);
+        //mainCamera.transform.position = new Vector3(rows/2,rows,columns/2);
 	}
 	
 	// Update is called once per frame
@@ -43,7 +43,97 @@ public class GenerateGrid : MonoBehaviour {
             for (int j = 0; j < columns; j++)
             { 
                 GameObject instance = Instantiate(tile, 
-                    new Vector3(i, 0f, j), Quaternion.identity) as GameObject;
+                    new Vector3(i, 0.1f, j), Quaternion.identity) as GameObject;
+
+                instance.transform.SetParent(gridHolder);
+
+                TileMouseOver tileData = instance.GetComponent<TileMouseOver>();
+                char type = tileMapped[i, j];
+
+                tileData.tileType = type;
+
+                // setting tile colors
+                if (tileData.tileType == '0')
+                {
+                    tileData.baseColor = Color.black;
+                }
+                else if (tileData.tileType == 't')
+                {
+                    tileData.baseColor = Color.gray;
+                }
+                else if (tileData.tileType == 'g')
+                {
+                    tileData.baseColor = Color.green;
+                }
+
+            }
+        }
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < columns; j++)
+            {
+                GameObject instance = Instantiate(tile,
+                    new Vector3(-i, 0.1f, j), Quaternion.identity) as GameObject;
+
+                instance.transform.SetParent(gridHolder);
+
+                TileMouseOver tileData = instance.GetComponent<TileMouseOver>();
+                char type = tileMapped[i, j];
+
+                tileData.tileType = type;
+
+                // setting tile colors
+                if (tileData.tileType == '0')
+                {
+                    tileData.baseColor = Color.black;
+                }
+                else if (tileData.tileType == 't')
+                {
+                    tileData.baseColor = Color.gray;
+                }
+                else if (tileData.tileType == 'g')
+                {
+                    tileData.baseColor = Color.green;
+                }
+
+            }
+        }
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < columns; j++)
+            {
+                GameObject instance = Instantiate(tile,
+                    new Vector3(i, 0.1f, -j), Quaternion.identity) as GameObject;
+
+                instance.transform.SetParent(gridHolder);
+
+                TileMouseOver tileData = instance.GetComponent<TileMouseOver>();
+                char type = tileMapped[i, j];
+
+                tileData.tileType = type;
+
+                // setting tile colors
+                if (tileData.tileType == '0')
+                {
+                    tileData.baseColor = Color.black;
+                }
+                else if (tileData.tileType == 't')
+                {
+                    tileData.baseColor = Color.gray;
+                }
+                else if (tileData.tileType == 'g')
+                {
+                    tileData.baseColor = Color.green;
+                }
+
+            }
+        }
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < columns; j++)
+            {
+                GameObject instance = Instantiate(tile,
+                    new Vector3(-i, 0.1f, -j), Quaternion.identity) as GameObject;
 
                 instance.transform.SetParent(gridHolder);
 
