@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/cameras.unity
+- path: Assets/VectorUnkown/cameras.unity
   isLoaded: 1
   isActive: 1

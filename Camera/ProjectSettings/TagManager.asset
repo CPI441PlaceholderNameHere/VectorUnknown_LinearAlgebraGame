@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Center
   - Follow
+  - Follow1
   layers:
   - Default
   - TransparentFX
